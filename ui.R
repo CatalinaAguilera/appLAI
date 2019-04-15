@@ -8,20 +8,22 @@
 #
 
 library(shiny)
+library(imager)
 options(shiny.maxRequestSize = 30*1024^2)
 
-# Define UI for application that draws a histogram
 shinyUI(fluidPage(
   
   # Application title
-  titlePanel("Old Faithful Geyser Data"),
+  titlePanel("Apps LAI"),
   
   # Sidebar with a slider input for number of bins 
   sidebarLayout(
     sidebarPanel(
       ############### INICIO Side Bar Panel
     
-       tabPanel("Cargar Imagen",fileInput("GetFile","Cargar Archivo"))
+       tabPanel("Cargar Imagen",
+                fileInput("GetFile","Cargar Archivo: ",accept = c(".png",".jpg")))
+       
        
        
     ),
@@ -29,7 +31,8 @@ shinyUI(fluidPage(
     
     # Show a plot of the generated distribution
     mainPanel(
-      uiOutput(outputId = "image1")
+      
+      plotOutput("ploteo")
     )
   )
 ))
