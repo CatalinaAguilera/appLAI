@@ -8,12 +8,36 @@
 #
 
 library(shiny)
+library(imager)
 
-# Define server logic required to draw a histogram
 shinyServer(function(input, output) {
   
-  output$image1 = renderUI({
-    input$GetFile
+  imageOriginal = NULL
+  imageName = NULL
+  
+  read.image <- function(image.file){
+    im <- load.image(image.file)
+    if(dim(im)[4] > 3){
+      im <- imappend(channels(im, 1:3), 'c')
+    }
+    im
+  }
+ 
+  observeEvent(input$GetFile, {
+    imageOriginal = read.image(input$GetFile$datapath)
+    imageName = gsub("(.jpg|.png)","", input$GetFile$name)
+    
+    output$ploteo <- renderPlot({
+      app.plot(imageOriginal)
+    })
+    
   })
+  
+  app.plot <- function(im){
+    if(is.null(im)){
+      return(NULL)
+    }
+    plot(im)
+  }
   
 })
