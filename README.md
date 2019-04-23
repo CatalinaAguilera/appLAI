@@ -1,4 +1,7 @@
 # appLAI
-Cargo imagen de tamaño mayor a 5mb.
-Falta visualizar, para poder cortarla.
-Al intentar visualizarla, Rstudio se cae.
+Carga imagen superior a 5mb.
+Selecciona poligono de recorte.
+Recorte exacto de poligono.
+Calculo LAI.
+Reset app.
+Instrucciones de uso.
