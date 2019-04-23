@@ -1,4 +1,6 @@
 # appLAI
 Cargo imagen de tamaño mayor a 5mb.
-Falta visualizar, para poder cortarla.
-Al intentar visualizarla, Rstudio se cae.
+Cambia resolución de la imagen.
+Recorta polígono exacto.
+Muestra recorte.
+Calcula LAI.
