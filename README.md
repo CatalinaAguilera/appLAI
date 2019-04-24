@@ -1,4 +1,4 @@
-# appLAI
+# Deploy appLAI
 Subí la app al servidor shiny,
 pero algo no anda bien (https://remotesensingcitra.shinyapps.io/applai/)
 Creo que debemos mejorar la importación de cada banda del rgb.
