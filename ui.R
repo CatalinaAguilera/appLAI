@@ -18,7 +18,7 @@ fluidPage(
                 value ="",
                 width = "75px"),
       actionButton("calculateLAI","Calculate LAI"),br(),br(),br(),
-      div(actionButton("reset","Reset"),align = "right"),br(),
+      div(actionButton("reset","Reset"),align = "left"),br(),
       HTML('<center><img src="citra.jpg" width="100"></center>')
     ),
     mainPanel(
@@ -32,11 +32,11 @@ fluidPage(
       column(style='border: 1px solid green',
              width=12,
              HTML("<u><h4>Instrucciones: </h4></u>",
-                  "<p>- Antes de realizar una accion debe cargar una imagen.</p>",
-                  "<p>- Presione Crop Begin, para luego seleccionar los vertices del poligono que desea recortar.</p>",
-                  "<p>- Presione Pause Cropping, si desea detener por un instante la seleccion del poligono.</p>",
-                  "<p>- Presione Reset Cropping, si desea limpiar la imagen.</p>",
-                  "<p>- Presione Crop Image, si desea recortar la imagen.</p>",
+                  "<p>- Antes de realizar una accion, debe cargar una imagen.</p>",
+                  "<p>- Seleccione Crop Begin, para luego seleccionar los vertices del poligono que desea recortar.</p>",
+                  "<p>- Seleccione Pause Cropping, si desea detener por un instante la seleccion del poligono.</p>",
+                  "<p>- Seleccione Reset Cropping, si desea volver a la imagen original.</p>",
+                  "<p>- Seleccione Crop Image, si desea recortar la imagen.</p>",
                   "<p>- Presione Calculate LAI, para calcular el indice de area foliar.</p>",
                   "<p>- Presione el boton Reset, si desea resetear la aplicacion.</p>")
       )

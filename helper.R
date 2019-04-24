@@ -40,9 +40,9 @@ app.plot <- function(im, clicks.x = NULL, clicks.y = NULL, lineslist = NULL){
     return(NULL)
   }
   if(is.null(ranges$x) | is.null(ranges$y)){
-    plot(im, xaxt='n', yaxt='n', ann=FALSE,legend=FALSE)
+    plot(im, xaxt='n', yaxt='n', ann=FALSE,legend=FALSE,col=rev(grey.colors(256)))
   }else{
-    plot(im, xaxt='n', yaxt='n', ann=FALSE, xlim=ranges$x,  ylim=c(ranges$y[2], ranges$y[1]))
+    plot(im, xaxt='n', yaxt='n', ann=FALSE, xlim=ranges$x,  ylim=c(ranges$y[2], ranges$y[1]),legend=FALSE)
   }
   if(length(clicks.x) > 1){
     lines(c(clicks.x, clicks.x[1]), c(clicks.y, clicks.y[1]), col='red')
