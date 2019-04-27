@@ -6,17 +6,6 @@ library(rgdal)
 
 function(input, output, session) {
   
-  v <- reactiveValues(
-    originalImage = NULL,
-    croppedImage = NULL,
-    imgMask = NULL,
-    imgclick.x = NULL,
-    imgclick.y = NULL,
-    crop.img = FALSE,
-    imageName = NULL
-  )
-  #assign("v", v, envir = .GlobalEnv)
-  
   ### Leer una imagen
   ### Automaticamente mostrar el nombre de dicha imagen
   observeEvent(input$file1, {

@@ -74,6 +74,17 @@ app.plot <- function(im, clicks.x = NULL, clicks.y = NULL, lineslist = NULL){
 
 ### Set ranges for zooming
 ranges <- reactiveValues(x = NULL, y = NULL)
+
+v <- reactiveValues(
+  originalImage = NULL,
+  croppedImage = NULL,
+  imgMask = NULL,
+  imgclick.x = NULL,
+  imgclick.y = NULL,
+  crop.img = FALSE,
+  imageName = NULL
+)
+
 #Prueba con variable Lista no funciona!!
 #v <- list(
 #  originalImage = NULL,
