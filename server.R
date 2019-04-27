@@ -4,6 +4,9 @@ library(sp)
 library(raster)
 library(rgdal)
 
+#library(pryr)
+#mem_used()
+
 function(input, output, session) {
   
   ### Leer una imagen
