@@ -13,9 +13,17 @@ read.image <- function(image.file){
   remove(r)
   removeTmpFiles(h=.01)
   gc()
+  im<-0.2126 * rr
+  remove(rr)
+  removeTmpFiles(h=.01)
+  gc()
   r<-raster(image.file,band=2)
   gg = resample(r,w)
   remove(r)
+  removeTmpFiles(h=.01)
+  gc()
+  im<-im + 0.7152 * gg
+  remove(gg)
   removeTmpFiles(h=.01)
   gc()
   r<-raster(image.file,band=3)
@@ -23,10 +31,11 @@ read.image <- function(image.file){
   remove(r)
   removeTmpFiles(h=.01)
   gc()
-  im<-0.2126 * rr + 0.7152 * gg + 0.0722 * bb
-  remove(rr,gg,bb,w)
+  im<-im + 0.0722 * bb
+  remove(bb,w)
   removeTmpFiles(h=.01)
   gc()
+  #im<-0.2126 * rr + 0.7152 * gg + 0.0722 * bb
   im
 }
 ### Funcion para seleccionar los puntos
